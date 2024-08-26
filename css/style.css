@@ -4305,6 +4305,12 @@ h6 {
     margin-top: 30px;
   }
 }
+@media (max-width: 400px) {
+  .home_banner_area .banner_inner .banner_content .junior{
+    color: #741515;
+    background: rgba(240, 240, 240, 0.5)
+  }
+}
 
 @media (max-width: 575px) {
 
