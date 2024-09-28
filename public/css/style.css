@@ -27,8 +27,14 @@ Author E-mail: naimlasker@gmail.com
 /*---------------------------------------------------- */
 /*----------------------------------------------------*/
 .navbar {
-  background-color: #333; /* Background color of the navbar */
-  padding: 10px 20px; /* Padding around the navbar */
+  font-size: 19px;
+  width: 100%;
+  position: relative;
+  position: fixed;
+  top: 0; 
+  background-color: #333;
+  padding: 10px 20px;
+  z-index: 1000;
 }
 
 .navbar-brand {
@@ -206,43 +212,8 @@ button:focus {
 ============================================================================================ */
 /* Start Gradient Area css
 ============================================================================================ */
-.gradient-bg,
-.header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link,
-.blog_right_sidebar .widget_title,
-.blog_right_sidebar .newsletter_widget .bbtns,
-.blog_right_sidebar .tag_cloud_widget ul li a:hover,
-.blog-pagination .page-item.active .page-link,
-.blog-pagination .page-link:hover,
-.comments-area .btn-reply:hover {
-  background: -webkit-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: -moz-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: -o-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-}
 
-.border-gradient {
-  border-image: -webkit-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  border-image: -moz-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  border-image: -o-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  border-image: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-}
 
-.gradient-bg2 {
-  background: -webkit-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: -moz-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: -o-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-}
-
-.gradient-color,
-.contact_info .info_item i {
-  background: -webkit-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: -moz-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: -o-linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
 
 /* End Gradient Area css
 ============================================================================================ */
@@ -263,7 +234,7 @@ button:focus {
   background-clip: content-box, border-box;
   background-image: linear-gradient(to right, #e69215 0%, #e69215 100%), radial-gradient(circle at top left, #e69215, #e69215);
   border: double 2px transparent;
-  box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+  /* box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3); */
 }
 .header_area {
   position: relative;
@@ -276,7 +247,9 @@ button:focus {
 .primary_btn span {
   padding: 0 42px;
 }
-
+.primary_btn{
+  margin: 0 28px;
+}
 .primary_btn.tr-bg {
   background-image: linear-gradient(#ffffff, #ffffff), radial-gradient(circle at top left, #e69215, #e69215);
   border: 2px solid transparent;
@@ -288,7 +261,7 @@ button:focus {
   background-image: linear-gradient(to right, #e69215 0%, #e69215 100%), radial-gradient(circle at top left, #e69215, #e69215);
   border: double 2px transparent;
   color: #ffffff;
-  box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+  /* box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3); */
 }
 
 .primary_btn:hover {
@@ -357,7 +330,7 @@ button:focus {
 }
 
 .header_area .navbar .nav .nav-item.submenu {
-  position: relative;
+  position: sticky;
 }
 
 .header_area .navbar .nav .nav-item.submenu ul {
@@ -425,9 +398,6 @@ button:focus {
   border-bottom: none;
 }
 
-.header_area .navbar .nav .nav-item.submenu ul .nav-item:hover .nav-link {
-  color: #fff;
-}
 
 @media (min-width: 992px) {
   .header_area .navbar .nav .nav-item.submenu:hover ul {
@@ -503,9 +473,7 @@ button:focus {
   }
 }
 
-.header_area.white_menu .navbar .nav .nav-item .nav-link {
-  color: #fff;
-}
+
 
 .header_area.white_menu.navbar_fixed .main_menu .navbar .navbar-brand img {
   display: inline-block;
@@ -3414,11 +3382,31 @@ h6 {
 }
 
 .feature_item:hover {
-  color: white;
-  box-shadow: 0px 15px 30px rgba(246, 172, 0, 0.745);
-  background: #ffaa2b;
+  color: black;
+  background: #fffefd;
   border-radius: 10%;
 }
+.feature_item {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature_item img {
+  width: 100%; /* Make the image responsive */
+  transition: transform 0.3s;
+}
+
+.feature_item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature_item:hover img {
+  transform: scale(1.1); /* Slightly zoom the image */
+}
+
+
 
 /* End Features Area css
 ============================================================================================ */
@@ -4540,3 +4528,216 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+
+.carousel-item {
+  position: relative;
+  height: 750px;
+  background-image: url("../img/banner/bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #000;
+}
+
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  transition: .5s;
+}
+
+.carousel-item1 {
+  position: relative;
+  height: 750px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.carousel-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Overlay color with opacity */
+  pointer-events: none;
+}
+
+.p-3 {
+  margin-top: -400px;
+}
+
+.p-3 h1 {
+  font-size: 50px;
+}
+
+.p-3 h5 {
+  font-size: 13px;
+}
+
+.card {
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.105);
+  border-radius: 10px; 
+  padding: 20px;
+  backdrop-filter: blur(1px);
+}
+
+.card, .card h1, .card h5 {
+  font-family: 'Montserrat', sans-serif;
+}
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .card {
+    padding: 15px; /* Reduce padding on medium screens */
+  }
+
+  .card h1 {
+    font-size: 1.5em; /* Adjust h1 size */
+  }
+
+  .card h5 {
+    font-size: 0.9em; /* Adjust h5 size */
+  }
+}
+
+@media (max-width: 992px) {
+  .card {
+    padding: 10px; /* Further reduce padding */
+  }
+
+  .card h1 {
+    font-size: 1.3em; /* Smaller h1 size */
+  }
+
+  .card h5 {
+    font-size: 0.85em; /* Smaller h5 size */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 10px; /* Maintain padding */
+  }
+
+  .card h1 {
+    font-size: 1.2em; /* Adjust h1 size */
+  }
+
+  .card h5 {
+    font-size: 0.8em; /* Adjust h5 size */
+  }
+}
+
+@media (max-width: 576px) {
+  .card {
+    
+    padding: 5px; /* Minimal padding for small screens */
+  }
+
+  .card h1 {
+    font-size: 1em; /* Adjust h1 size */
+  }
+
+  .card h5 {
+    font-size: 0.75em; /* Adjust h5 size */
+  } 
+  .resp{
+    margin: 1px;
+    width: 180px !important;
+  }
+}
+.navbar {
+  background: transparent; 
+}
+
+.navbar-collapse {
+  justify-content: flex-end; /* Align items to the right */
+}
+
+.menu_nav {
+  display: flex; /* Align items in a row */
+  padding: 10px; /* Remove default padding */
+}
+
+.nav-item .nav-link {
+  font-weight: bold;
+  margin-left: 20px; 
+  color: #f4a700 !important;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1200px) {
+  .carousel-item {
+    height: 600px; /* Adjust height for smaller screens */
+  }
+
+  .p-3 h1 {
+    font-size: 40px; /* Adjust font size */
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-item {
+    height: 500px; /* Further adjust height */
+  }
+
+  .p-3 h1 {
+    font-size: 30px; /* Adjust font size */
+  }
+
+  .p-3 {
+    margin-top: -300px; /* Adjust margin */
+  }
+
+  .nav-item .nav-link {
+    margin-left: 10px; /* Less space on smaller screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item {
+    height: 400px; /* Even smaller height */
+  }
+
+  .p-3 h1 {
+    font-size: 25px; /* Smaller font size */
+  }
+
+  .p-3 h5 {
+    font-size: 12px; /* Adjusted font size */
+  }
+
+  .navbar-collapse {
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-end; /* Align items to the right */
+  }
+
+  .menu_nav {
+    flex-direction: column; /* Stack nav items vertically */
+  }
+
+  .nav-item .nav-link {
+    margin-left: 0; /* No left margin for stacked items */
+  }
+}
+
+@media (max-width: 576px) {
+  .about_area {
+    margin-top: -50px;
+  }
+
+  .carousel-item {
+    height: 300px;
+    /* Smallest height */
+  }
+
+  .p-3 h1 {
+    font-size: 20px; /* Smallest font size */
+  }
+
+  .p-3 h5 {
+    font-size: 10px; /* Smallest font size */
+  }
+}
